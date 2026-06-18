@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Dsw2026Ej15.Domain.Interfaces
+namespace Dsw2026Ej15.Data.Dtos
 {
-    public interface IPersistence
+    public record SpecialityDto
     {
     }
 }
