@@ -7,7 +7,7 @@ public class Doctor : BaseEntity
 {
     public string Name { get; init; }
     public string LicenseNumber { get; init; }
-    public bool IsActive { get; private set; }
+    public bool IsActive { get; set; }
     public Speciality? Speciality { get; private set; }
 
 

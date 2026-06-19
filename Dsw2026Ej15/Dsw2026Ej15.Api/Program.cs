@@ -24,8 +24,9 @@ namespace Dsw2026Ej15.Api
                 app.UseSwaggerUI();
             }
 
-            app.UseAuthorization();
+            app.UseHttpsRedirection();
 
+            app.UseAuthorization();
 
             app.MapControllers();
 
