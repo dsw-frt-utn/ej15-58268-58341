@@ -7,7 +7,7 @@ using Dsw2026Ej15.Api.Models;
 namespace Dsw2026Ej15.Api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/doctors")]
 public class DoctorsController : ControllerBase
 {
     private readonly IPersistence _persistence;
