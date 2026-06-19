@@ -6,5 +6,6 @@ namespace Dsw2026Ej15.Domain.Interfaces
 {
     public interface IPersistence
     {
+
     }
 }
