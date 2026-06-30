@@ -10,10 +10,10 @@ public class Doctor : BaseEntity
     public string LicenseNumber { get; init; }
     public bool IsActive { get; private set; }
     public Speciality? Speciality { get; private set; }
-
+    [JsonInclude]
     public Guid? SpecialityId { get; init;}
 
-    [JsonInclude] 
+ 
 
     public Doctor() { }
 
