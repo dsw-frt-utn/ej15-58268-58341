@@ -1,0 +1,72 @@
+[
+  {
+    "Id": "a1b2c3d4-e5f6-4789-aaaa-111111111111",
+    "Name": "Juan Pérez",
+    "LicenseNumber": "MAT-1001",
+    "IsActive": true,
+    "SpecialityId": "8a1f3b78-3f66-4d68-8d6e-1c5b9c7a2f41"
+  },
+  {
+    "Id": "a1b2c3d4-e5f6-4789-bbbb-222222222222",
+    "Name": "María González",
+    "LicenseNumber": "MAT-1002",
+    "IsActive": true,
+    "SpecialityId": "f4d2c9a1-7b3e-4f8d-9c61-2e7a5d8b3c12"
+  },
+  {
+    "Id": "a1b2c3d4-e5f6-4789-cccc-333333333333",
+    "Name": "Carlos Rodríguez",
+    "LicenseNumber": "MAT-1003",
+    "IsActive": true,
+    "SpecialityId": "c7e8d4b2-5f91-4a37-b8d4-9e2c6f1a7b53"
+  },
+  {
+    "Id": "a1b2c3d4-e5f6-4789-dddd-444444444444",
+    "Name": "Ana Fernández",
+    "LicenseNumber": "MAT-1004",
+    "IsActive": true,
+    "SpecialityId": "1b9c5d7e-8a42-4f63-9d8e-3c7a1f5b2e64"
+  },
+  {
+    "Id": "a1b2c3d4-e5f6-4789-eeee-555555555555",
+    "Name": "Lucía Martínez",
+    "LicenseNumber": "MAT-1005",
+    "IsActive": true,
+    "SpecialityId": "7c3d8e5a-1f62-4b94-a9d3-6e2b7c1f4a08"
+  },
+  {
+    "Id": "b2c3d4e5-f6a7-4890-aaaa-666666666666",
+    "Name": "Diego López",
+    "LicenseNumber": "MAT-1006",
+    "IsActive": false,
+    "SpecialityId": "7c3d8e5a-1f62-4b94-a9d3-6e2b7c1f4a08"
+  },
+  {
+    "Id": "b2c3d4e5-f6a7-4890-bbbb-777777777777",
+    "Name": "Sofía Ramírez",
+    "LicenseNumber": "MAT-1007",
+    "IsActive": true,
+    "SpecialityId": "7c3d8e5a-1f62-4b94-a9d3-6e2b7c1f4a08"
+  },
+  {
+    "Id": "b2c3d4e5-f6a7-4890-cccc-888888888888",
+    "Name": "Martín Herrera",
+    "LicenseNumber": "MAT-1008",
+    "IsActive": false,
+    "SpecialityId": "7c3d8e5a-1f62-4b94-a9d3-6e2b7c1f4a08"
+  },
+  {
+    "Id": "b2c3d4e5-f6a7-4890-dddd-999999999999",
+    "Name": "Valentina Castro",
+    "LicenseNumber": "MAT-1009",
+    "IsActive": true,
+    "SpecialityId": "6b1f9d3a-5c47-4e82-a7d5-2f8c6b1e3a20"
+  },
+  {
+    "Id": "b2c3d4e5-f6a7-4890-eeee-101010101010",
+    "Name": "Gabriel Torres",
+    "LicenseNumber": "MAT-1010",
+    "IsActive": true,
+    "SpecialityId": "1b9c5d7e-8a42-4f63-9d8e-3c7a1f5b2e64"
+  }
+]

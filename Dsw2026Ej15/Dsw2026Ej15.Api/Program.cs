@@ -1,6 +1,7 @@
 using Dsw2026Ej15.Api.Middlewares;
 using Dsw2026Ej15.Data;
 using Dsw2026Ej15.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dsw2026Ej15.Api
 {
@@ -11,33 +12,29 @@ namespace Dsw2026Ej15.Api
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
+            builder.Services.AddDbContext<Dsw2026Ej16DbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddControllers();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddSingleton<IPersistence, PersistenceInMemory>();
-
             builder.Services.AddHealthChecks();
+            builder.Services.AddScoped<IPersistence, PersistenceEF>();
 
             var app = builder.Build();
 
             app.UseMiddleware<ExceptionHandlingMiddleware>();
 
-            app.UseRouting();
-
-            app.MapHealthChecks("/health-check");
+            app.UseHttpsRedirection();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.MapSwaggerUI();
             }
-
-            app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
             app.MapControllers();
+            app.MapHealthChecks("/health-check");
 
             app.Run();
         }

@@ -8,6 +8,6 @@ namespace Dsw2026Ej15.Domain.Interfaces
         Task<List<Doctor>?> GetDoctorsActiveAsync();
         Task InsertarDoctorAsync(string name, string licenseNumber, Speciality speciality);
         Task<Doctor?> GetDoctorActiveByIdAsync(Guid id);
-        Task<Doctor?> BajaLogicaDoctorByIdAsync(Guid id);
+        Task BajaLogicaDoctorByIdAsync(Guid id);
     }
 }
