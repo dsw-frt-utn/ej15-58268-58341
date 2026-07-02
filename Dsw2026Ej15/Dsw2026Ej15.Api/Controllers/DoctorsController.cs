@@ -44,7 +44,15 @@ namespace Dsw2026Ej15.Controllers
         public async Task<IActionResult> GetDoctorsActive() 
         {
             var doctors = await _persistence.GetDoctorsActiveAsync();
-            return Ok(doctors);
+
+            var response = doctors?.Select(doctor => new DoctorModel.Response(
+                doctor.Name,
+                doctor.LicenseNumber,
+                doctor.Speciality.Name))
+                .ToList();
+
+            
+            return Ok(response);
         }
 
         [HttpGet("{id}")] 

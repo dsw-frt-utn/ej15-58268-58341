@@ -16,7 +16,7 @@ namespace Dsw2026Ej15.Api
 
             builder.Services.AddDbContext<Dsw2026Ej16DbContext>(options =>
             {
-                options.UseSqlServer(connectionString);
+                options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 46)));  //Utilizo MYSQL porque en SQL me genera error iteradas veces, tuve una consulta con Iñaqui y no pudimos encontrar forma de solucionarlo: "SQL Server process failed to start" Por lo que cambiamos el motor.
             });
 
             builder.Services.AddControllers();
