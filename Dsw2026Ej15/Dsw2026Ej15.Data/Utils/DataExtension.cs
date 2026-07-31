@@ -1,12 +1,14 @@
-﻿using Dsw2026Ej15.Domain.Entities;
+﻿using Dsw2026Ej15.Data;
+using Dsw2026Ej15.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
 
-namespace Dsw2026Ej15.Data.Utils
+namespace Dsw2026Ej15.Data.Util
 {
-    public static class DataExtension
+    public static class DataExtensions
     {
         public static void Seedwork<T>(this Dsw2026Ej16DbContext context, string fileName) where T : BaseEntity
         {

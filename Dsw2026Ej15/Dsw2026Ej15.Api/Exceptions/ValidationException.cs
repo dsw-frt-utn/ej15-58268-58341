@@ -2,12 +2,10 @@
 {
     public class ValidationException : Exception
     {
-        public ValidationException(): base()
-        {
-        }
+        public ValidationException() : base()
+        { }
 
-        public ValidationException(string detalle): base(detalle) 
-        {
-        }
+        public ValidationException(string detalle) : base(detalle)
+        { }
     }
 }

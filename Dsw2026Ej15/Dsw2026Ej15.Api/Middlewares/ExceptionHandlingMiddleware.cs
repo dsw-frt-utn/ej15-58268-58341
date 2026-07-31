@@ -1,8 +1,11 @@
-﻿using System.Net;
+﻿using Dsw2026Ej15.Api.Exceptions;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using System.Net;
 using System.Text.Json;
-using Dsw2026Ej15.Api.Exceptions;
+using System.Threading.Tasks;
 
-namespace Dsw2026Ej15.Api.Middlewares
+namespace Dsw2026Ej15.Api.Middleware
 {
     public class ExceptionHandlingMiddleware
     {
@@ -15,26 +18,42 @@ namespace Dsw2026Ej15.Api.Middlewares
 
         public async Task InvokeAsync(HttpContext context)
         {
+
             try
             {
                 await _next(context);
             }
-            catch (ValidationException ex)
+
+            catch (Exception ex)
             {
-                await HandleExceptionAsync(context, HttpStatusCode.BadRequest, ex.Message);
-            }
-            catch (Exception)
-            {
-                await HandleExceptionAsync(context, HttpStatusCode.InternalServerError, "Internal Server Error.");
+                await HandleExceptionAsync(context, ex);
             }
         }
 
-        private static Task HandleExceptionAsync(HttpContext context, HttpStatusCode code, string message)
+        private static async Task HandleExceptionAsync(HttpContext context, Exception ex)
         {
-            context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int)code;
+            HttpStatusCode status = HttpStatusCode.InternalServerError;
+            string message = "Ocurrió un error inesperado al ejecutar la solicitud";
+
+            if (ex is ValidationException ve)
+            {
+                status = HttpStatusCode.BadRequest;
+                message = ve.Message;
+
+            }
+
             var result = JsonSerializer.Serialize(new { error = message });
-            return context.Response.WriteAsync(result);
+            context.Response.ContentType = "application/json";
+            context.Response.StatusCode = (int)status;
+            await context.Response.WriteAsync(result);
+        }
+    }
+
+    public static class ExceptionHandlingMiddlewareExtensions
+    {
+        public static IApplicationBuilder UseExceptionHandlingMiddleware(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<ExceptionHandlingMiddleware>();
         }
     }
 }

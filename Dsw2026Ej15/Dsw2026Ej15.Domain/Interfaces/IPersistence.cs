@@ -1,13 +1,16 @@
-﻿using Dsw2026Ej15.Domain.Entities;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Dsw2026Ej15.Domain.Entities;
 
 namespace Dsw2026Ej15.Domain.Interfaces
 {
     public interface IPersistence
     {
-        Task<Speciality?> GetSpecialityByIdAsync(Guid id);
-        Task<List<Doctor>?> GetDoctorsActiveAsync();
-        Task InsertarDoctorAsync(string name, string licenseNumber, Speciality speciality);
-        Task<Doctor?> GetDoctorActiveByIdAsync(Guid id);
-        Task BajaLogicaDoctorByIdAsync(Guid id);
+        Task<Speciality?> GetSpecialityById(Guid id);
+        Task<List<Doctor>?> GetDoctorsActive();
+        Task InsertarDoctor(string name, string licenseNumber, Speciality speciality);
+        Task<Doctor?> GetDoctorActiveById(Guid id);
+        Task BajaLogicaDoctorById(Guid id);
     }
 }
