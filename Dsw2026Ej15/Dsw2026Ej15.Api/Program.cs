@@ -16,7 +16,7 @@ namespace Dsw2026Ej15.Api
             builder.Services.AddControllers();
             builder.Services.AddSwaggerGen();
             builder.Services.AddHealthChecks();
-            builder.Services.AddScoped<IPersistence, PersistenceEF>();
+            builder.Services.AddScoped<IPersistence, PersistenceEf>();
 
             var app = builder.Build();
 

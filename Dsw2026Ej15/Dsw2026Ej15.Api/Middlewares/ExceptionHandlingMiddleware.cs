@@ -5,7 +5,7 @@ using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Dsw2026Ej15.Api.Middleware
+namespace Dsw2026Ej15.Api.Middlewares
 {
     public class ExceptionHandlingMiddleware
     {
